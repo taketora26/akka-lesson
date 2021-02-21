@@ -3,6 +3,8 @@ package styleGuide.functional
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{ActorRef, Behavior}
 
+// Typed Actor
+
 object HelloWorld {
 
   final case class Greet(whom: String, replyTo: ActorRef[Greeted])

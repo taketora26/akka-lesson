@@ -2,6 +2,8 @@ package styleGuide.classic
 
 import akka.actor.{Actor, ActorLogging, Props}
 
+// Classic Actor
+
 object HelloWorld {
 
   final case class Greet(whom: String)
@@ -19,5 +21,4 @@ class HelloWorld extends Actor with ActorLogging {
       log.info("Hello {}!", whom)
       sender() ! Greeted(whom)
   }
-
 }
