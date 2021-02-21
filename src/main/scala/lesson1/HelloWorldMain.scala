@@ -12,7 +12,7 @@ object HelloWorldMain {
       val greeter = context.spawn(HelloWorld(), "greeter")
 
       Behaviors.receiveMessage { message =>
-        val replyTo = context.spawn(HelloWorldBot(max = 3), message.name)
+        val replyTo = context.spawn(HelloWorldBot(max = 5), message.name)
         greeter ! HelloWorld.Greet(message.name, replyTo)
         Behaviors.same
       }
@@ -23,6 +23,7 @@ object HelloWorldMain {
 
     system ! HelloWorldMain.SayHello("World")
     system ! HelloWorldMain.SayHello("Akka")
+    system ! HelloWorldMain.SayHello("IKEDA")
 
   }
 
